@@ -4,6 +4,8 @@
 
 本文件將《AI 通用工程憲章 v1.1》P01–P23、《通用專案治理原則 v1.0》G01–G15 及本專案新增 G16 完整置於同一文件，可獨立使用。繁體中文是規範基準；後續英文部分為忠實翻譯，若有歧異，以繁體中文為準。原則提供判斷與驗收依據，不保證任何 Agent 必然遵守，也不取代技術控制、必要授權或實際驗收。
 
+P23 的「資源限制與方法改善」為後續修訂，亦載於公開工程憲章 v1.2；其餘 v1.1 來源與下述版本差異保持可追溯。
+
 本專案採用本機正式檔案《GENERAL_CONSTITUTION_V1.1.md》中的通用版 P01–P23（SHA-256：CA766AE38B4477F964A75CE3B290698C5268822708D1AA0992420073E74AA21D），以及本機治理指引中的 G01–G15 v1.0。既有公開 Repository 的 [constitution/GENERAL_CONSTITUTION_V1.1.md](https://github.com/JonesLai25/AI-Engineering-Constitution/blob/main/constitution/GENERAL_CONSTITUTION_V1.1.md) 雖有相同版本標籤，但保留較早的專案情境 P01–P22 原文，且多處措辭不同；公開 Repository 的[可見檔案樹](https://github.com/JonesLai25/AI-Engineering-Constitution/tree/main/constitution)未列出 G01–G15。兩份 v1.1 文件不能視為相同文本。本專案依本次任務提供的本機正式規範編寫，不拼接公開版條文；來源 Repository 保持不變。該版本差異的歷史意圖目前無可查證決策紀錄。
 
 各原則須相互參照及制衡，不得孤立、機械式或擴張解讀。本文件不擴大人類授權，不修改更高層治理原則，不突破既有安全邊界。
@@ -113,6 +115,10 @@
 11. 不影響必要決策及驗收的未知事項，允許保持未知。
 12. 不得為節省低成本資源，而消耗更高成本的資源。
 13. 必要驗收完成後，應立即收斂並交付，不自行衍生非必要工作。
+
+### 資源限制與方法改善
+
+合理的資源限制應促進問題收斂、工作方法改善與既有成果重用。當既有資源不足以經濟地完成工作，應考慮降低問題複雜度及提高資源利用效率。資源配置應衡量整體目標與總體成本；資源評估及方法改善本身亦有成本，應依最低充分及邊際效益判斷。
 
 ### 約束條件
 
@@ -848,6 +854,10 @@ Engineering activity has a cost. Thinking, searching, analysis, execution, verif
 11. Unknowns that do not affect necessary decisions or acceptance may remain unknown.
 12. Do not consume more expensive resources merely to save cheaper ones.
 13. Once necessary acceptance is complete, converge and deliver instead of inventing nonessential follow-up work.
+
+### Resource limits and improving methods
+
+Reasonable resource limits should encourage problem convergence, better working methods, and reuse of existing results. When available resources cannot complete work economically, consider reducing problem complexity and improving utilization. Evaluate allocation against the overall goal and total cost; resource assessment and method improvement also have costs and should be proportionate to sufficiency and marginal benefit.
 
 ### Constraints
 

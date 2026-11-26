@@ -170,6 +170,10 @@ Property-Based Testing（PBT）在此是驗證方法，不是另一套治理規�
 
 #### P23 — 已足則止，無益不為（成本效益）
 
+**資源限制補充的候選性質：** 在必要品質、安全與驗收條件固定的前提下，觀察總體成本、被省略的工作及方法改善理由；若只降低局部成本卻增加整體成本、跳過必要驗收，或增加無預期增量價值的最佳化工作，即為反例。經濟性與方法改善須依可用證據及情境判斷，不能由單一布林值證明。此為測試設計，尚未執行。
+
+**English:** With required quality, safety and acceptance held fixed, observe total cost, omitted work and reasons for method changes. A local saving that raises total cost, skipped acceptance, or optimization without expected incremental value is a counterexample. Economic and method-improvement judgments require contextual evidence; this is an unexecuted test design.
+
 - **前提／觀測／判定：** 需求、安全及必要驗收已固定；觀測新增搜尋、重試、驗證、模型切換、委派和人工介入的邊際資訊價值及成本。必要驗收不得省略；無新增資訊價值的重複工作是候選違規，需依風險和實際證據判斷。
 - **反例：** 必要驗收通過後，沒有新假設卻重跑高成本流程；或為省成本跳過必須的負向控制。
 - **English:** Given fixed requirements, safety, and required acceptance, observe marginal information value and cost of more search, retries, verification, model switches, delegation, and human involvement. Required acceptance cannot be dropped; repeated work without new value is a candidate violation assessed by risk and evidence. Counterexample: rerunning an expensive workflow without a new hypothesis, or skipping a required negative control to save cost.
