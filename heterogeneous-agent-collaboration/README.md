@@ -6,7 +6,7 @@
 
 - 來源版本：委派決策與資源選擇修訂快照；尚未正式指定版本號或 Git tag。
 - 日期：2026-11-26（Asia/Taipei）。
-- `heterogeneous-agent-collaboration/SKILL.md` SHA-256：`9e4087192611d1cc72bb50e4b0d72ef8425b5ee94f4a810a9075e438dc922376`。
+- `heterogeneous-agent-collaboration/SKILL.md` SHA-256：`778f5c9eab728ee4f046564ac08ba3b17fa3031504de4f2d7623f3707f6a39a1`。
 - 本目錄依 Repository 的 [CC BY 4.0 授權](../LICENSE)提供；內部驗證原始紀錄不包含於此。
 
 ## 安裝與使用
@@ -20,3 +20,6 @@
 ## 驗證狀態
 
 詳見 [VALIDATION.md](VALIDATION.md)。新 Session 完整載入及可觀察的異質派工尚未通過驗收；目前沒有量化成本改善的證據。
+
+
+槓鈴式智慧資源配置（BIA）為可選 **EXPERIMENTAL** 策略；效益及實際 Agent 行為尚未驗證。詳見 [SKILL.md](SKILL.md) 與 [VALIDATION.md](VALIDATION.md)。
