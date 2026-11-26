@@ -1,0 +1,30 @@
+---
+name: heterogeneous-agent-collaboration
+description: Proactively assess whether staged work, parallel execution, or agent and model collaboration materially benefits a task; load before any agent delegation. Keep simple, converged tasks direct and obey runtime permissions.
+---
+
+# Heterogeneous Agent Collaboration
+
+Proactively load and apply this skill when staged work, parallel execution, or collaboration can materially benefit the task, and before any decision to create a subagent. Do not wait for the user to name the skill. Assess the task and delegation benefit before acting; simple, converged work may be completed directly. A single responsible agent owns the whole outcome and remains the user's point of contact. Follow higher-priority instructions and the user's authorization; this skill does not grant delegation, model access, permissions, or approval authority.
+
+## Decide whether and how to delegate
+
+- Clarify the goal, dependencies, material risks, and acceptance evidence. Stop management decomposition once the outcome, approach, prerequisites, and acceptance are sufficiently clear. Direct execution can be best; execution delegation can still be useful for cost or parallelism without adding management layers.
+- Distinguish management delegation (coordination and cross-stage decisions) from execution delegation (a bounded deliverable). Delegate a coherent stage or independently verifiable outcome, not a collection of needless microtasks. Account for setup, context transfer, review, retries, resource contention, and integration costs.
+- Select the least capable model and reasoning effort reasonably sufficient for each task given ambiguity, risk, available evidence, and cost. Prefer deterministic tools for deterministic work. Do not bind a model to a permanent role. Use the current runtime's available models and tool schema; when creating an agent, explicitly set an appropriate supported model if the runtime and higher-priority instructions permit it; do not inherit the parent model unintentionally. If an explicit override is unavailable or prohibited, follow the higher-priority constraint and record the effective choice or uncertainty. Set reasoning effort when supported and appropriate; if unavailable or unreported, treat it as unknown.
+
+## Prepare and dispatch
+
+Before dependent work, verify the actual execution host, identity, available tools, network and access where relevant. Reuse existing authorization; distinguish actual failures from assumptions. Resolve legitimate access issues autonomously within policy; never expand authority or bypass sandbox or approvals. Prepare human intervention only when genuinely needed. Do not build a separate authorization service for a task.
+
+Give each agent the goal, deliverable, acceptance and falsification criteria, dependencies, access and mutation boundaries, and stopping conditions. Include the complete, verified operation entry points: host, environment, identity, paths or URLs, and required command when material. State which context is inherited and provide all critical facts when it is not. Avoid secrets and unnecessary history. Establish ownership of shared writes; parallelize independent work only when resources and side effects do not conflict.
+
+## Execute, accept, and close
+
+Agents own their stage through implementation or investigation, recovery, and evidence. An early completion or an error is not proof that a stage is finished: compare the actual deliverable with its acceptance criteria, identify remaining scope, and return it for completion when useful. The responsible agent checks decisive evidence proportionate to risk instead of repeating all work. Distinguish facts, inference, candidates, unknowns, and existing values. Resolve defects or missing context; increase model capability or reasoning only when evidence indicates it is needed.
+
+While agents run, do useful independent work; otherwise use the runtime's blocking wait or completion notifications. Avoid active polling and artificial work. Incorporate user changes and maintain the original goal. Release or stop task-specific agents and temporary resources after their work is complete, subject to runtime capabilities; revoke task-specific grants only when they actually exist and revocation is authorized. Preserve relevant evidence. Report observed results and unresolved items, and leave unmeasured token, cost, or performance claims unknown.
+
+## Runtime-specific guidance
+
+For Codex, inspect the currently provided collaboration tool documentation and model inventory. When delegation is allowed, `spawn_agent` supports an explicit `model` and, when supported, `reasoning_effort`. A fresh context such as `fork_turns: "none"` requires the full minimum operational context in the task; the default may inherit the parent model. Use `send_message` for corrections to an active agent, `followup_task` for additional work on an available agent, and `wait_agent` for completion events where available. Do not assume tools, model names, context semantics, or agent teardown operations exist in another runtime; use its actual documented equivalents and obey its current restrictions.
