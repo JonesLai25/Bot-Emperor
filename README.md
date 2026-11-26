@@ -48,10 +48,10 @@
 ## 核心內容
 
 1. **P01–P23：工程行為治理。** 規範工程執行、驗收、故障恢復、責任、授權、安全及持續工作。
-2. **G01–G15：組織協作治理。** 規範共同目標、分層自治、例外處理、方向校準及多 Agent 協作。
+2. **G01–G16：組織協作治理。** 規範共同目標、分層自治、例外處理、方向校準及多 Agent 協作。
 3. **PBT：可證偽驗證。** 分析規範及實際行為的一致性、適用條件、交互作用、反例與效益證據；測試設計與實際執行分別記錄。
 
-完整、可獨立使用的規範見 [GOVERNANCE.md](GOVERNANCE.md)。38 條原則的 PBT 性質、交互作用、已執行範圍及限制見 [PBT.md](PBT.md)。有紀錄支持且已去識別化的工程故事見 [HISTORY.md](HISTORY.md)。
+完整、可獨立使用的規範見 [GOVERNANCE.md](GOVERNANCE.md)。39 條原則的 PBT 性質、交互作用、已執行範圍及限制見 [PBT.md](PBT.md)。有紀錄支持且已去識別化的工程故事見 [HISTORY.md](HISTORY.md)。
 
 ## 使用方式
 
@@ -59,7 +59,7 @@
 
 ### 與既有工程憲章的關係
 
-本專案承繼並整合既有 [AI-Engineering-Constitution](https://github.com/JonesLai25/AI-Engineering-Constitution) 工程憲章，並納入 G01–G15 組織協作治理與 PBT 分析，形成獨立、完整的框架。既有 Repository 保留其獨立性及歷史價值；本專案不修改該 Repository。來源版本差異記載於 [GOVERNANCE.md](GOVERNANCE.md)。
+本專案承繼並整合既有 [AI-Engineering-Constitution](https://github.com/JonesLai25/AI-Engineering-Constitution) 工程憲章，並納入 G01–G16 組織協作治理與 PBT 分析，形成獨立、完整的框架。既有 Repository 保留其獨立性及歷史價值；本專案不修改該 Repository。來源版本差異記載於 [GOVERNANCE.md](GOVERNANCE.md)。
 
 ## English
 
@@ -107,12 +107,12 @@ The Emperor would like to sleep.
 ### Framework and use
 
 - **P01–P23:** governance of engineering behavior, including acceptance, recovery, responsibility, authorization, safety, and continued work.
-- **G01–G15:** governance of organizational collaboration, including shared goals, layered autonomy, exceptions, direction alignment, and multi-agent coordination.
+- **G01–G16:** governance of organizational collaboration, including shared goals, layered autonomy, exceptions, direction alignment, and multi-agent coordination.
 - **PBT:** falsifiable analysis of the specification and observed behavior, including applicability, interactions, counterexamples, and outcome evidence. Test design is distinguished from work actually executed.
 
 Read the standalone [GOVERNANCE.md](GOVERNANCE.md), the property-based testing analysis in [PBT.md](PBT.md), and the de-identified engineering history in [HISTORY.md](HISTORY.md). Adopt the governance text in existing agent instructions with explicit goals, constraints, authorization boundaries, and acceptance conditions. Evaluate actual tool use and delivered outcomes; do not rely only on an agent's claim that it complied.
 
-This project builds on the engineering constitution in [AI-Engineering-Constitution](https://github.com/JonesLai25/AI-Engineering-Constitution), while adding organizational governance principles G01–G15 and PBT analysis. The earlier repository remains independent and unchanged.
+This project builds on the engineering constitution in [AI-Engineering-Constitution](https://github.com/JonesLai25/AI-Engineering-Constitution), while adding organizational governance principles G01–G16 and PBT analysis. The earlier repository remains independent and unchanged.
 
 ## License
 

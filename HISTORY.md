@@ -24,6 +24,16 @@
 
 這兩組文本共同呈現由工程行為規範延伸至組織協作規範的框架結構。現有版本資料能確認兩組規範目前並列適用，不能證明各條原則的實際起草先後、某次事故與條文形成之間的直接因果，或框架已經降低多少返工。跨 Agent 上下文遺失、局部阻塞後的整體停擺、過度回報及人工介入、過度搜尋與驗證、權責不對稱等均是文件及調研中提出的工程問題；除上文列明且有紀錄支持的案例外，本文件不把它們描述為已逐一查證的事件。
 
+## 從派工到單一責任窗口與任務收斂
+
+本次 G16 的直接來源是專案需求提出者提供的原則文字及設計意圖。該提案把異質模型協作、遞迴派工、單一責任窗口及任務分解何時應停止，放在同一個設計問題中：承接任務者可以自行執行或組織下層協作，但仍須對整體交付負責，不能讓需求提出者承接內部分工的複雜度。這是本次可確認的決策與需求，不代表已有可量測的多模型協作成果。
+
+在此前的公開發布工作中，執行者曾先回報缺少 GitHub 認證，沒有立即準備登入介面；經需求提出者指出後，才開啟登入頁、接續發布及公開檔案驗證。這是可觀察的人工中斷與接續經驗，但現有紀錄不足以把它歸因於遞迴派工，也不證明 G16 將消除此類中斷。
+
+設計推論是：任務明確且進一步管理無實質價值時，繼續增加管理層級可能增加交接成本與責任歧義；明確的對外責任窗口與依成本效益決定的執行委派可能有助於收斂。管理性分解與執行性委派因而分別考量，後者可包含適當的異質模型或確定性工具。本次提出的條件是判斷輔助，並非已證明可用固定門檻機械判定。
+
+尚未以受控比較確認上述安排能降低成本、縮短時間、減少返工或改善交付品質；也沒有據此認定每次委派都有效。G16 的正式文字見 [GOVERNANCE.md](GOVERNANCE.md)，可檢驗的候選性質與限制見 [PBT.md](PBT.md)。
+
 ## 規範來源與版本差異
 
 本專案的繁體中文正式規範以本機正式《AI 通用工程憲章 v1.1》為來源，該檔案 SHA-256 為 `CA766AE38B4477F964A75CE3B290698C5268822708D1AA0992420073E74AA21D`；組織治理原則採用通用專案治理原則 v1.0。兩份全文已整合於 [GOVERNANCE.md](GOVERNANCE.md)，並附不擴張條文的英文翻譯。
@@ -66,6 +76,16 @@ This is an actual counterexample and correction relevant to P09–P12, P16, and 
 The general engineering constitution P01–P23 used by this project addresses unnecessary human relays, the distinction between process success and acceptance, falsifiable conditions, failure evidence, permission boundaries, autonomy within an authorized stage, and stopping when additional work has no value. The general project governance principles G01–G15 address shared goals, handoff context, layered autonomy, exception handling, direction alignment, peer coordination, decision retention, and minimum sufficient context across organizational levels.
 
 Together, the texts form a framework that covers both engineering behavior and organizational collaboration. Available versions confirm that the two sets currently apply together; they do not establish the drafting order of every principle, a direct causal link between each incident and each rule, or a measured reduction in rework. Context loss across agents, global stalls after local blocks, excess reporting and human intervention, over-searching and over-verification, and mismatched responsibility and authority appear as engineering questions in the texts and research draft. Except for the sourced cases above, this history does not present them as individually verified events.
+
+## From delegation to one accountable contact and task convergence
+
+G16 originates directly in the principle text and design intent supplied by the project requester for this update. The proposal brings heterogeneous model collaboration, recursive delegation, one accountable contact, and the stopping point for task decomposition into one design question: the task owner can execute work or organize subordinate collaboration while remaining accountable for the overall delivery, without transferring internal coordination complexity to the requester. This is an evidenced request and design decision, not evidence of measured multi-model results.
+
+During the previous public release, the executor first reported missing GitHub authentication without immediately preparing a sign-in interface. After the requester pointed this out, the executor opened the sign-in page, resumed publication, and verified the public files. This records an observed human interruption and resumption; it does not establish that recursive delegation caused the interruption or that G16 will eliminate it.
+
+The design inference is that adding management layers after a task is clear and further management has no material value may increase handoff cost and obscure responsibility. One accountable external contact and execution delegation chosen on expected costs and benefits may help work converge. Management decomposition and execution delegation are therefore considered separately; the latter may use suitable heterogeneous models or deterministic tools. The proposed conditions assist judgment; they are not established fixed thresholds for mechanical decisions.
+
+No controlled comparison has established that this arrangement reduces cost or time, lowers rework, or improves delivery quality, and no claim is made that every delegation is effective. The normative G16 text is in [GOVERNANCE.md](GOVERNANCE.md); candidate properties and limitations are in [PBT.md](PBT.md).
 
 ## Source versions and differences
 

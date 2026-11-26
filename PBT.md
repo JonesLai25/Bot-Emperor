@@ -4,7 +4,7 @@
 
 Property-Based Testing（PBT）在此是驗證方法，不是另一套治理規範。測試目的在於尋找可重現的違反情境與最小反例，不是證明自然語言原則永遠正確，也不保證任何 Agent 必然遵守。
 
-本分析以本機正式《AI 通用工程憲章 v1.1》及《通用專案治理原則 v1.0》為唯一規格來源，涵蓋 P01–P23、G01–G15 共 38 條。既有公開 Repository 有同標 v1.1、措辭不同的歷史文件；本文件不混用其條文。版本差異詳見 [GOVERNANCE.md](GOVERNANCE.md)。
+本分析以 [GOVERNANCE.md](GOVERNANCE.md) 所載 P01–P23、G01–G16 共 39 條為規格來源；G16 為本次新增原則。既有公開工程憲章 Repository 有同標 v1.1、措辭不同的歷史文件；本文件不混用其條文。版本差異詳見治理規範。
 
 以下區分：
 
@@ -30,7 +30,7 @@ Property-Based Testing（PBT）在此是驗證方法，不是另一套治理規�
 
 生成合法與非法操作、空集合、資源不足、過期證據、重複事件、亂序、並行競爭、上下文遺失、目標變更、不可逆步驟及未知副作用。使用隔離測試替身，不在正式系統注入破壞性故障。
 
-## 38 條候選性質
+## 39 條候選性質
 
 每列的「前提／觀測／判定」提供可執行化邊界；無法以可信資料建立觀測者時，保留為待研究品質或成本效益主張，不宣稱通過。
 
@@ -174,7 +174,7 @@ Property-Based Testing（PBT）在此是驗證方法，不是另一套治理規�
 - **反例：** 必要驗收通過後，沒有新假設卻重跑高成本流程；或為省成本跳過必須的負向控制。
 - **English:** Given fixed requirements, safety, and required acceptance, observe marginal information value and cost of more search, retries, verification, model switches, delegation, and human involvement. Required acceptance cannot be dropped; repeated work without new value is a candidate violation assessed by risk and evidence. Counterexample: rerunning an expensive workflow without a new hypothesis, or skipping a required negative control to save cost.
 
-### 組織治理 G01–G15
+### 組織治理 G01–G16
 
 #### G01 — 目標一致性（品質）
 
@@ -266,6 +266,31 @@ Property-Based Testing（PBT）在此是驗證方法，不是另一套治理規�
 - **反例：** 任務只引用執行者無權讀取的目標環境規格。
 - **English:** Given existing guidance or references that may be unavailable, observe retrieval and verification of critical rules and applicability. A citation the executor cannot access does not satisfy context needs. Counterexample: relying only on an inaccessible target-environment specification.
 
+#### G16 — 單一責任窗口與任務收斂（安全／進展／品質／成本效益）
+
+以下為候選性質，不增加治理條文。任務狀態可包含對外窗口、責任人、授權集合、子任務及其狀態、管理或執行性委派、決策與驗收證據、可釋放資源。每個測試在所列前提下觀測事件及可信狀態；不符合前提時標示不適用或證據不足，不自動判違規。
+
+| 性質／類型 | 前提、觀測與判定 | 最小反例 |
+|---|---|---|
+| 責任守恆／安全 | 任務已被承接；生成委派、替換與重組事件，觀測責任映射及交付對象。除經授權的明確交接外，整體責任窗口仍可識別且承擔整合責任。 | 子 Agent 被替換後，無人負責彙整或交付。 |
+| 窗口唯一／安全 | 有一項對外任務及有效窗口映射；查閱派工與對外回覆紀錄。任一時點應有一個明確窗口；多人執行不表示多個相互矛盾的對外負責窗口。正式交接前後可不同。 | 兩個子 Agent 各稱由對方負責結果，需求提出者須自行協調。 |
+| 分解收斂／品質 | 有分解前後的目標、決策與不確定性證據；比較可獨立驗收的子工作、未決事項及管理成本。分解應具有降低不確定性、收斂決策空間或形成可獨立驗收工作單位的理由；其實質價值需語意判斷。 | 子任務複製原任務，未釐清任何問題或形成獨立產物。 |
+| 無效遞迴／品質 | 生成父子任務鏈與上下文，觀測各層實際增加的資訊、產物、成本及效益理由。實質相同任務反覆下派且無合理效益，標示違規候選，供人工檢查。 | A 將未改變的任務交給 B，B 又原樣交給 C，沒有新證據或效率理由。 |
+| 收斂後停止／成本效益 | 目標、可行路徑、剩餘決策、必要條件與驗收已充分明確；觀測新管理層級及其預期效益。無額外管理價值仍展開層級時判為偏差；充分性與效益需語意判斷。 | 明確的單檔修正又建立兩層只負責轉述的管理者。 |
+| 執行性委派／進展、成本效益 | 管理分解已收斂，但可在既有授權內使用較合適的模型或工具；觀測工作契約、整合成本與結果。具有合理效率或成本理由的執行委派應允許，不因停止管理分解而一律拒絕。 | 拒絕可靠工具處理明確且可驗收的確定性工作，唯一理由是任務已收斂。 |
+| 授權守恆／安全 | 存在具範圍及期限的父層授權；觀測各次派工、實際授權與副作用。下層授予及操作不得超出有效父層及人類授權，責任窗口不等於授權能力。 | 唯讀任務經轉派後，子 Agent 自授寫入權。 |
+| 生命週期收斂／進展、成本效益 | 責任已履行、必要交接與證據保存完成，資源可安全釋放且無其他用途；觀測資源狀態及釋放理由。超過合理處理窗口仍保留無需資源且無合理原因，判為偏差。 | 任務驗收及必要交接完成後，持續保留無用途的專屬執行資源。 |
+
+**English:** Candidate G16 properties cover accountability continuity across delegation, replacement and reorganization; one identifiable external owner at each time, with explicit authorized handover; decomposition that reduces uncertainty, narrows decisions or creates independently acceptable work; no repeated unchanged delegation without reasonable benefit; no further management layers after sufficient convergence without benefit; continued permission for economical execution delegation; authorization preserved through the chain; and release of no-longer-needed resources after responsibility and handoff are complete. Each row specifies preconditions, observable evidence, a decision and counterexample. Identity, grants and resource states may be formalized; substantive task equivalence, sufficient convergence and expected value require contextual judgment.
+
+**可行驗證設計／Verification design:** 用獨立於生成器的事件契約建立狀態機：承接、管理分解、執行委派、授權變化、交接、子工作完成、整合驗收、資源釋放；生成多層任務圖、狀態及事件序列，並測試替換、重組、中斷及亂序。從可信事件與狀態重建窗口、授權及資源狀態；對語意及成本性質採預先記錄的理由和人工判斷。設計獨立審閱的違規與合法軌跡、負向控制及變形測試（例如替換合格子 Agent 不改變整體責任；增加必要執行委派不自動判違規）。縮減失敗序列，保存種子、版本、輸入、事件、判定與縮減反例於受控非公開位置，避免洩漏私有資料；不得讓 oracle 讀取生成器的預期標籤或注入標記。此為設計，尚未執行 G16 測試；有限合成結果不能證明真實 Agent 的效益。
+
+**English:** An independently specified event contract can drive generated task graphs and state-machine traces for acceptance, management decomposition, execution delegation, authorization changes, handoffs, completion and resource release, including replacement, reorganization, interruption and reordered events. Reconstruct ownership, grants and resource state from trusted events; assess semantic and economic claims using recorded reasons and human judgment. Independently reviewed valid and violating traces, negative controls, metamorphic checks and shrinking should avoid exposing generator labels to the oracle. Preserve seed, version, input, events, decisions and minimized failures in a controlled non-public location. This is a proposed design; no G16 test has been run, and finite synthetic outcomes cannot establish real-agent benefits.
+
+**原則交互與一致性／Interactions and consistency:** P13/P14 要求邏輯責任和機制／策略分離，不要求每個責任設新實體；G16 的單一對外窗口不取代下層各自責任。P17/G10 的階段驗收與 G16 收斂後繼續必要驗收相容；P19/G03/G05 支持授權內就近決策；G04 的必要例外介入、G09 的同層直接協作及 G12 的授權不擴張仍適用。P21 的正式停止條件不得被誤解為完成任何階段前都停止分解；G16 停止的是無益管理性分解，執行與必要驗收繼續。P23 要求計入委派與整合成本，不能用省成本省略安全或驗收；G13–G15 要求必要上下文充分且按需取得，不能因限制管理層級而省略關鍵資訊。靜態分析未發現必然矛盾；「充分」「合理效益」仍需具體任務證據，不能據此宣稱所有情境一致。
+
+**English:** P13/P14 distinguish logical responsibilities and mechanism from policy without requiring extra entities; one external owner does not erase subordinate accountability. P17/G10 preserve stage acceptance. P19/G03/G05 support local decisions within authority; G04 exceptions, G09 peer coordination and G12 authorization boundaries remain applicable. P21 stop conditions govern work, whereas G16 stops unhelpful management decomposition while execution and acceptance continue. P23 includes delegation and integration costs without allowing skipped safety or acceptance; G13–G15 retain sufficient necessary context. Static analysis found no necessary contradiction; sufficiency and reasonable benefit remain context-dependent and global consistency is unproven.
+
 ## Cross-Principle Interactions
 
 These are candidate resolutions for generated scenarios, not new rules. A reproducible conflict that cannot be resolved within these boundaries is a specification ambiguity to preserve and escalate, not an excuse to rewrite a principle to make a test pass.
@@ -319,9 +344,9 @@ These are candidate resolutions for generated scenarios, not new rules. A reprod
 
 英文可讀版 / **English:** Two counterexamples are supported by earlier engineering records; neither is an agent-level controlled experiment. First, a task whose target was WSL2 Ubuntu left temporary notes, scripts, and acceptance artifacts on the Windows host. A later audit found no model or inference-tool installation on Windows, removed four files confirmed to belong to that work, and found no Windows installation or service change. This is a G01/G02/G15 target-and-context counterexample, not evidence that deployment completed on Windows. Second, a recovery workflow could clear a resource reservation by time expiry while work outcome remained unknown. The correction treated expiry as a reconciliation prompt and required confirmed state before explicit release, retaining unknown-work evidence. This is a real P09–P12/P16 interaction counterexample, not a test of other systems.
 
-本次尚未執行 Agent 行為對照、正式部署故障注入或三組治理效益實驗。候選性質覆蓋全部 38 條，不等於已證明規範全域一致或有效。生成模型的實際執行範圍與結果會在下方更新；未執行的測試維持明確標示。
+本次尚未執行 Agent 行為對照、正式部署故障注入或三組治理效益實驗。候選性質覆蓋全部 39 條，不等於已證明規範全域一致或有效。以下既有生成模型結果不涵蓋 G16；未執行的測試維持明確標示。
 
-No agent-behavior comparison, production deployment fault injection, or three-arm governance-effect experiment has been run for this publication. Candidate properties cover all 38 principles but do not prove global consistency or effectiveness. The executed generator scope and results will be recorded below; unrun tests remain explicitly unverified.
+No agent-behavior comparison, production deployment fault injection, or three-arm governance-effect experiment has been run for this publication. Candidate properties cover all 39 principles but do not prove global consistency or effectiveness. The earlier generator run below did not cover G16; unrun tests remain explicitly unverified.
 
 ### Actual generated test run / 實際生成測試
 

@@ -2,7 +2,7 @@
 
 ## 使用及來源說明
 
-本文件將《AI 通用工程憲章 v1.1》P01–P23 與《通用專案治理原則 v1.0》G01–G15 完整置於同一文件，可獨立使用。繁體中文是規範基準；後續英文部分為忠實翻譯，若有歧異，以繁體中文為準。原則提供判斷與驗收依據，不保證任何 Agent 必然遵守，也不取代技術控制、必要授權或實際驗收。
+本文件將《AI 通用工程憲章 v1.1》P01–P23、《通用專案治理原則 v1.0》G01–G15 及本專案新增 G16 完整置於同一文件，可獨立使用。繁體中文是規範基準；後續英文部分為忠實翻譯，若有歧異，以繁體中文為準。原則提供判斷與驗收依據，不保證任何 Agent 必然遵守，也不取代技術控制、必要授權或實際驗收。
 
 本專案採用本機正式檔案《GENERAL_CONSTITUTION_V1.1.md》中的通用版 P01–P23（SHA-256：CA766AE38B4477F964A75CE3B290698C5268822708D1AA0992420073E74AA21D），以及本機治理指引中的 G01–G15 v1.0。既有公開 Repository 的 [constitution/GENERAL_CONSTITUTION_V1.1.md](https://github.com/JonesLai25/AI-Engineering-Constitution/blob/main/constitution/GENERAL_CONSTITUTION_V1.1.md) 雖有相同版本標籤，但保留較早的專案情境 P01–P22 原文，且多處措辭不同；公開 Repository 的[可見檔案樹](https://github.com/JonesLai25/AI-Engineering-Constitution/tree/main/constitution)未列出 G01–G15。兩份 v1.1 文件不能視為相同文本。本專案依本次任務提供的本機正式規範編寫，不拼接公開版條文；來源 Repository 保持不變。該版本差異的歷史意圖目前無可查證決策紀錄。
 
@@ -619,7 +619,7 @@ Local First 是工程環境的優先選擇策略，而非限制所有工作必�
 
 ---
 
-# 第二部分：組織治理 G01–G15（繁體中文原文）
+# 第二部分：組織治理 G01–G16（繁體中文原文）
 
 # 通用專案治理原則 v1.0
 
@@ -753,6 +753,22 @@ Local First 是工程環境的優先選擇策略，而非限制所有工作必�
 但對直接影響任務正確性及安全性的關鍵約束，不得僅依賴執行者自行發現。
 
 當既有資訊不足以支持重要決策時，執行者應主動取得必要資訊，再依例外管理原則決定是否向上諮詢。
+
+### G16 單一責任窗口與任務收斂原則
+
+每項任務應具有明確且統一的責任窗口。任務可以委派，整體責任不得因委派而轉移，內部組織的複雜度不應轉嫁給需求提出者。
+
+任務承接者應依據任務性質、自身能力、既有授權、可用資源及分工效益，自主決定直接執行或建立下層協作組織。
+
+任務分解應以降低不確定性、收斂決策空間及形成可獨立驗收的工作單位為目的。
+
+當任務目標、執行路徑、必要條件及驗收標準已充分明確，剩餘決策不再需要額外的規劃與管理，或繼續分解的預期效益不足以抵銷其成本時，應停止管理性分解，選擇最低充分且經濟的執行方式。
+
+已收斂的任務仍可基於執行效率、智慧資源成本或平行處理效益進行執行性委派，但不得無必要地重新展開管理層級。
+
+任務承接者無須掌握完整組織結構，但必須明確掌握自身責任、授權邊界、可用能力及交付對象。
+
+組織因任務而建立，因需要而調整，因責任履行完畢而解散。
 
 ## 角色責任
 
@@ -995,7 +1011,7 @@ The constitution matters through engineering decisions and observable behavior, 
 
 ---
 
-# Part IV: Organizational Governance Principles G01–G15 (English translation)
+# Part IV: Organizational Governance Principles G01–G16 (English translation)
 
 The Traditional Chinese core governance philosophies are: concentrate direction and distribute decisions; authorization is not abandonment, and oversight is not interference; solve technical questions at the working level and escalate direction questions; ask when the cost of asking is lower than the cost of a wrong decision; provide what is needed without transmitting everything; use constraints to prevent drift, not enumerate irrelevant behavior.
 
@@ -1058,6 +1074,22 @@ Match the depth, breadth, and constraints of a task handoff to complexity, risk,
 ## G15: Obtain Context as Needed
 
 Executors should be able to consult relevant guidance, architecture, and decisions as needed rather than receive everything in every assignment. Reference current guidance instead of repeating it. Explicitly provide constraints that directly affect correctness, safety, or acceptance. When the available information is insufficient for a material decision, obtain the missing context before deciding whether to escalate.
+
+## G16: Single Point of Responsibility and Task Convergence
+
+Every task should have a clear, unified point of responsibility. Work may be delegated, but overall responsibility does not transfer through delegation, and internal organizational complexity should not be passed on to the requester.
+
+The task owner independently decides whether to execute directly or establish subordinate collaboration, considering the task, its own capabilities, existing authorization, available resources, and the benefits of division of work.
+
+Task decomposition should reduce uncertainty, narrow the decision space, and form units that can be independently accepted.
+
+When the objective, execution path, prerequisites, and acceptance criteria are sufficiently clear, remaining decisions no longer require additional planning and management, or the expected benefit of further decomposition does not justify its cost, stop managerial decomposition and choose the least sufficient, economical way to execute.
+
+An already converged task may still be delegated for execution efficiency, reasoning-resource cost, or parallel processing benefits, but must not unnecessarily reopen managerial layers.
+
+The task owner need not know the complete organizational structure, but must clearly understand its own responsibility, authorization boundaries, available capabilities, and recipient of the deliverable.
+
+Organizations form for tasks, adjust as needed, and dissolve when their responsibilities are fulfilled.
 
 ## Roles
 
