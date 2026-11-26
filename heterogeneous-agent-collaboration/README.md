@@ -4,9 +4,9 @@
 
 ## 版本與完整性
 
-- 來源版本：自主觸發更新快照；尚未正式指定版本號或 Git tag。
+- 來源版本：委派決策與資源選擇修訂快照；尚未正式指定版本號或 Git tag。
 - 日期：2026-11-26（Asia/Taipei）。
-- `heterogeneous-agent-collaboration/SKILL.md` SHA-256：`c9c8adcb44154197d02facb5878ac6659a1c7ac728a7ceafecb2f94febfa7a28`。
+- `heterogeneous-agent-collaboration/SKILL.md` SHA-256：`9e4087192611d1cc72bb50e4b0d72ef8425b5ee94f4a810a9075e438dc922376`。
 - 本目錄依 Repository 的 [CC BY 4.0 授權](../LICENSE)提供；內部驗證原始紀錄不包含於此。
 
 ## 安裝與使用
