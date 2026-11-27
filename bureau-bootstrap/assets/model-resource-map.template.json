@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "levels": {
+    "LOW": {
+      "model": "",
+      "thinking": ""
+    },
+    "MEDIUM": {
+      "model": "",
+      "thinking": ""
+    },
+    "HIGH": {
+      "model": "",
+      "thinking": ""
+    }
+  }
+}

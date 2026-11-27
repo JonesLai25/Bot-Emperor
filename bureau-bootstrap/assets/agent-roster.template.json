@@ -1,1 +1,15 @@
-
+{
+  "version": 1,
+  "agents": [
+    {
+      "id": "",
+      "title": "",
+      "department": "",
+      "role": "",
+      "level": "",
+      "threadId": "",
+      "hostId": "",
+      "projectId": ""
+    }
+  ]
+}
