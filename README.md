@@ -53,6 +53,10 @@
 
 完整、可獨立使用的規範見 [GOVERNANCE.md](GOVERNANCE.md)。39 條原則的 PBT 性質、交互作用、已執行範圍及限制見 [PBT.md](PBT.md)。有紀錄支持且已去識別化的工程故事見 [HISTORY.md](HISTORY.md)。
 
+## 探索性研究紀錄
+
+[工程憲章小型對照試驗（2026-11-27）](research/charter-pilot-2026-11-27/REPORT.md)：單一簡單任務的小樣本觀察，非因果結論；報告列明資料與驗證限制。
+
 ## 使用方式
 
 將 [GOVERNANCE.md](GOVERNANCE.md) 納入既有 Agent 指引，並為每項工作提供共同目標、必要限制、授權邊界及驗收條件。先確認執行者可取得適用規範，再以實際工具操作、狀態及交付成果評估行為；不以 Agent 自述作為唯一證據。使用 [PBT.md](PBT.md) 檢查規範與實際行為，並把 [HISTORY.md](HISTORY.md) 當作工程經驗，不當成另一套規則。
